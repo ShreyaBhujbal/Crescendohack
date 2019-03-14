@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ngo = require('./ngo');
+//var ngo = require('./ngo');
 
 var eventSchema = new mongoose.Schema({
     name:String,
@@ -11,7 +11,7 @@ var eventSchema = new mongoose.Schema({
     time:Boolean,
     money:Boolean,
     things:Boolean,
-    ngo:[{type : Schema.Types.ObjectId, ref: 'ngo'}],
+    //ngo:[{type : Schema.Types.ObjectId, ref: 'ngo'}],
 });
 
 module.exports.Schema = eventSchema;
