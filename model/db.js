@@ -5,3 +5,11 @@ mongoose.connect(database, { useNewUrlParser: true });
 mongoose.connection.on("connected", () => {
   console.log("connected");
 });
+require('./ngo');
+require('./event');
+require('./admin')
+require('./volunteer');
+require('./payment');
+
+
+
