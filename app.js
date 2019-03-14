@@ -9,6 +9,8 @@ const port = 3000;
 require("./model/db");
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
+
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
