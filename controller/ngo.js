@@ -2,19 +2,19 @@ var mongoose = require("mongoose");
 var express = require("express");
 var router = express.Router();
 
-var Event = require("../model/event");
-var Event = mongoose.model("Event");
+var Ngo = require("../model/ngo");
+var Ngo = mongoose.model("Ngo");
 
-module.exports.addEvent = (req, res) => {
+module.exports.addNgo = (req, res) => {
   var query = {
     name: req.body.name,
-    category: req.body.category,
-    description: req.body.description,
-    target: req.body.target,
-    achieved: req.body.achieved
+    contact: req.body.contact,
+    mail: req.body.mail,
+    points: req.body.points,
+    description: req.body.description
   };
 
-  Event.create(query, (err, doc) => {
+  Ngo.create(query, (err, doc) => {
     if (!err) {
       console.log(doc);
       res.send({ status: "Done", doc: doc });
@@ -24,7 +24,7 @@ module.exports.addEvent = (req, res) => {
   });
 };
 
-module.exports.getevents = (req, res) => {
+module.exports.getngo = (req, res) => {
   Ngo.find({}, (err, doc) => {
     if (!err) {
       res.send({ status: "Done", data: doc });
@@ -35,16 +35,16 @@ module.exports.getevents = (req, res) => {
 };
 
 exports.delete = function(req, res) {
-  Event.remove(
+  Ngo.remove(
     {
-      _id: req.params.event_id
+      _id: req.params.ngo_id
     },
-    function(err, event) {
+    function(err, ngo) {
       if (err) res.send(err);
 
       res.json({
         status: "success",
-        message: "Event deleted"
+        message: "Ngo deleted"
       });
     }
   );
