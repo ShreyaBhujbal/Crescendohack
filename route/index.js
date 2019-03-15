@@ -24,6 +24,11 @@ var mongoose = require("mongoose");
     res.render('about', {page:'About Us', menuId:'about'});
   });
   
+  router.get('/magic',function(req, res, next) {
+    res.render('magic', {page:'EVENT', menuId:'magic'});
+  });
+
+
   router
   .route('/login')
   .get(function(req, res, next) {
@@ -44,10 +49,17 @@ var mongoose = require("mongoose");
   .post(ngoCtrl.addNgo)
 
   router
+  .route('/done')
+  .get(function(req, res, next) {
+    res.render('done');
+  })
+
+  router
   .route('/searchNgo')
   .get(function(req, res, next) {
     res.render('searchNgo', {page:'SEARCH NGO', menuId:'searchNgo'});
   })
+  .post(eventCtrl.geteventsbycategory)
   
 
 module.exports = router;
