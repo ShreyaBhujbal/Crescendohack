@@ -30,12 +30,10 @@ router.get("/NGO", function(req, res, next) {
   res.render("NGO", { page: "Add Event", menuId: "NGO" });
 });
 
-router
-  .route("/login")
-  .get(function(req, res, next) {
-    res.render("login", { page: "LOGIN", menuId: "login" });
-  })
-  .post(ngoCtrl.viewNgo);
+router.route("/login").get(function(req, res, next) {
+  res.render("login", { page: "LOGIN", menuId: "login" });
+});
+//.post(ngoCtrl.viewNgo);
 
 router
   .route("/register")
@@ -48,6 +46,9 @@ router.route("/searchNgo").get(function(req, res, next) {
   res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });
 });
 
+router.route("/donate").get(function(req, res, next) {
+  res.render("donate");
+});
 //mail
 
 var smtpTransport = nodemailer.createTransport({
@@ -59,11 +60,11 @@ var smtpTransport = nodemailer.createTransport({
   }
 });
 
-router.route("/ngo/mail").get(function(req, res, next) {
+router.route("/contact").get(function(req, res, next) {
   res.render("mail");
 });
 
-router.route("/ngo/mail/send").get(function(req, res) {
+router.route("/contact/send").get(function(req, res) {
   //code to send e-mail.
   //Will be shown soon.
   var mailOptions = {
