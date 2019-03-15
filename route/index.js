@@ -23,24 +23,45 @@ router.get("/", function(req, res, next) {
   res.render("index", { page: "Home", menuId: "home" });
 });
 
-router.get("/about", function(req, res, next) {
-  res.render("about", { page: "About Us", menuId: "about" });
-});
-router.get("/NGO", function(req, res, next) {
-  res.render("NGO", { page: "Add Event", menuId: "NGO" });
-});
+  router.get('/about', function(req, res, next) {
+    res.render('about', {page:'About Us', menuId:'about'});
+  });
+  
+  router.get('/magic',function(req, res, next) {
+    res.render('magic', {page:'EVENT', menuId:'magic'});
+  });
+
+
+  router
+  .route('/login')
+  .get(function(req, res, next) {
+    res.render('login', {page:'LOGIN', menuId:'login'});
+  })
+  .post(function(req, res, next) {
+    res.redirect('/NGO');
+  })
+  router.get('/NGO', function(req, res, next) {
+    res.render('NGO', {page:'Add Event', menuId:'NGO'});
+  });
 
 router.route("/login").get(function(req, res, next) {
   res.render("login", { page: "LOGIN", menuId: "login" });
 });
 //.post(ngoCtrl.viewNgo);
 
-router
-  .route("/register")
+  router
+  .route('/done')
+  .get(function(req, res, next) {
+    res.render('done');
+  })
+
+  router
+  .route('/searchNgo')
   .get(function(req, res, next) {
     res.render("register", { page: "REGISTER", menuId: "register" });
   })
-  .post(ngoCtrl.addNgo);
+  .post(eventCtrl.geteventsbycategory)
+  
 
 router.route("/searchNgo").get(function(req, res, next) {
   res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });

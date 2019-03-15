@@ -20,7 +20,8 @@ module.exports.addNgo = (req, res) => {
   Ngo.create(query, (err, doc) => {
     if (!err) {
       console.log(doc);
-      res.send({ status: "Done", doc: doc });
+      res.redirect("/done");
+      //res.send({ status: "Done", doc: doc });
     } else {
       res.send({ status: "Error", err: err });
     }
