@@ -66,3 +66,17 @@ module.exports.getevents = (req, res) => {
 };
 
 //VIEW EVENTS
+
+module.exports.geteventsbycategory = () => {
+  options = req.body.options;
+  options = ["Education", "Health"];
+
+  Event.find({ category: { $in: options } }, (err, doc) => {
+    if (err) {
+      res.send({ error: err });
+    } else {
+      //Events
+      res.send({ status: "Done", data: doc });
+    }
+  });
+};
