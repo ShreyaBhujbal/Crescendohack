@@ -35,24 +35,57 @@
   </head>
   <div>
     <body>
-      <div id="container">
+          <% include partials/menu %>
+          <div class="container-fluid bg-3 text-center">
+            <h2>Mail</h2><br>
+            <div class="col-sm-4">
+
+
+            </div>
+
+            <div class="container">
+
+
+        <div class="form-group row">
+          <label for="">TO   </label>
+<div class="col-sm-10">
         <input
+        class="form-control"
           id="to"
           type="text"
           placeholder="Enter E-mail ID where you want to send"
         />
+          </div>
+          </div>
         <br />
-        <input id="subject" type="text" placeholder="Write Subject" />
+<div class="form-group row">
+  <label for="">SUBJECT</label>
+<div class="col-sm-10">
+        <input class="form-control" id="subject" type="text" placeholder="Write Subject" />
+        </div>
+          </div>
         <br />
+
+          <div class="form-group row">
+            <label for="">TEXT</label>
+            <div class="col-sm-10">
         <textarea
+        class="form-control"
           id="content"
           cols="40"
           rows="5"
           placeholder="Write what you want to send"
         ></textarea>
-        <button id="send_email">Send Email</button>
+        </div>
+          </div>
+        <button id="send_email" class="btn btn-primary">Send Email</button>
         <span id="message"></span>
       </div>
+</div>
+
+
     </body>
+
+
   </div>
 </html>
