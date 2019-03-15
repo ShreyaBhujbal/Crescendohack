@@ -12,9 +12,4 @@ module.exports.payment = (req, res) => {
     amount: req.body.amount,
     event: req.body.eventId
   });
-  Event.findOne({ _id: req.body.eventId }, (err, doc) => {
-    doc.achieved = doc.achieved + req.body.amount;
-    doc.save();
-    res.send(doc);
-  });
 };
