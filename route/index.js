@@ -23,51 +23,53 @@ router.get("/", function(req, res, next) {
   res.render("index", { page: "Home", menuId: "home" });
 });
 
-  router.get('/about', function(req, res, next) {
-    res.render('about', {page:'About Us', menuId:'about'});
-  });
-  
-  router.get('/magic',function(req, res, next) {
-    res.render('magic', {page:'EVENT', menuId:'magic'});
-  });
+router.get("/about", function(req, res, next) {
+  res.render("about", { page: "About Us", menuId: "about" });
+});
 
+router.get("/magic", function(req, res, next) {
+  res.render("magic", { page: "EVENT", menuId: "magic" });
+});
 
-  router
-  .route('/login')
+router
+  .route("/login")
   .get(function(req, res, next) {
-    res.render('login', {page:'LOGIN', menuId:'login'});
+    res.render("login", { page: "LOGIN", menuId: "login" });
   })
   .post(function(req, res, next) {
-    res.redirect('/NGO');
-  })
-  router.get('/NGO', function(req, res, next) {
-    res.render('NGO', {page:'Add Event', menuId:'NGO'});
+    res.redirect("/NGO");
   });
+router.get("/NGO", function(req, res, next) {
+  res.render("NGO", { page: "Add Event", menuId: "NGO" });
+});
 
 router.route("/login").get(function(req, res, next) {
   res.render("login", { page: "LOGIN", menuId: "login" });
 });
+
+router.route("/event").get(function(req, res, next) {
+  res.render("event");
+});
+
 //.post(ngoCtrl.viewNgo);
 router.route("/register").get(function(req, res, next) {
   res.render("register", { page: "REGISTER", menuId: "register" });
 });
-  router
-  .route('/done')
-  .get(function(req, res, next) {
-    res.render('done');
-  })
+router.route("/done").get(function(req, res, next) {
+  res.render("done");
+});
 
-  
 router
   .route("/searchNgo")
   .get(function(req, res, next) {
-  res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });
+    res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });
   })
-  .post(eventCtrl.geteventsbycategory)
+  .post(eventCtrl.geteventsbycategory);
 
 router.route("/donate").get(function(req, res, next) {
   res.render("donate");
 });
+
 //mail
 
 var smtpTransport = nodemailer.createTransport({
