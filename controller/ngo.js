@@ -14,9 +14,6 @@ module.exports.addNgo = (req, res) => {
     points: 0,
     description: req.body.description
   };
-
-
-
   Ngo.create(query, (err, doc) => {
     if (!err) {
       console.log(doc);
@@ -28,9 +25,7 @@ module.exports.addNgo = (req, res) => {
   });
 };
 
-module.exports.NGO = (req, res) => {
-      
-}
+module.exports.NGO = (req, res) => {};
 
 module.exports.getngo = (req, res) => {
   Ngo.find({}, (err, doc) => {
