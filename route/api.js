@@ -22,5 +22,4 @@ router
   //.get(eventCtrl.getevents)
   .post(eventCtrl.addEvent);
 
-router.route("");
 module.exports = router;
