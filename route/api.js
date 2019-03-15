@@ -8,11 +8,18 @@ var ngoCtrl = require("../controller/ngo");
 router
   .route("/:ngoId/event")
   //.get(eventCtrl.getevents)
-  .post(eventCtrl.addEvent);
+  .post(eventCtrl.addEvent)
+  .get(eventCtrl.geteventsbycategory);
 
 router
   .route("/ngo")
   .get(ngoCtrl.getngo)
   .post(ngoCtrl.addNgo);
 
+router
+  .route("/:ngoId/:eventId/payment")
+  //.get(eventCtrl.getevents)
+  .post(eventCtrl.addEvent);
+
+router.route("");
 module.exports = router;
