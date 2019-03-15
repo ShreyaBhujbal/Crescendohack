@@ -48,24 +48,22 @@ router.route("/login").get(function(req, res, next) {
   res.render("login", { page: "LOGIN", menuId: "login" });
 });
 //.post(ngoCtrl.viewNgo);
-
+router.route("/register").get(function(req, res, next) {
+  res.render("register", { page: "REGISTER", menuId: "register" });
+});
   router
   .route('/done')
   .get(function(req, res, next) {
     res.render('done');
   })
 
-  router
-  .route('/searchNgo')
+  
+router
+  .route("/searchNgo")
   .get(function(req, res, next) {
-    res.render("register", { page: "REGISTER", menuId: "register" });
+  res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });
   })
   .post(eventCtrl.geteventsbycategory)
-  
-
-router.route("/searchNgo").get(function(req, res, next) {
-  res.render("searchNgo", { page: "SEARCH NGO", menuId: "searchNgo" });
-});
 
 router.route("/donate").get(function(req, res, next) {
   res.render("donate");

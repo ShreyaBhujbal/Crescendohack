@@ -67,16 +67,16 @@ module.exports.getevents = (req, res) => {
 
 //VIEW EVENTS
 
-module.exports.geteventsbycategory = () => {
+module.exports.geteventsbycategory = (req,res) => {
   options = req.body.options;
-  options = ["Food", "Education", "Health", "Disaster"];
-
+  
   Event.find({ category: { $in: options } }, (err, doc) => {
     if (err) {
       res.send({ error: err });
     } else {
       //Events
-      res.send({ status: "Done", data: doc });
+      res.redirect('/ngoSearch',{ status: "Done", data: doc });
+      console.log(doc);
     }
   });
 };
