@@ -49,7 +49,7 @@ router
   .get(function(req, res, next) {
     res.render("login", { page: "LOGIN", menuId: "login" });
   })
-  .post(ngoCtrl.viewNgo);
+  //.post(ngoCtrl.viewNgo);
 
   router
   .route('/done')
