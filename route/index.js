@@ -40,9 +40,13 @@ router.get("/", function(req, res, next) {
   .post(function(req, res, next) {
     res.redirect('/NGO');
   })
-  router.get('/NGO', function(req, res, next) {
+
+  router
+  .route('/NGO')
+  .get(function(req, res, next) {
     res.render('NGO', {page:'Add Event', menuId:'NGO'});
-  });
+  })
+ // .post()
 
 router.route("/login").get(function(req, res, next) {
   res.render("login", { page: "LOGIN", menuId: "login" });
