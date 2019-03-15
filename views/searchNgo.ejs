@@ -17,11 +17,14 @@
       <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
       <h3>Select Category : </h3>
       <form action="/searchNgo" method="POST">
-        <input type="checkbox" name="food" value="Food">Food<br>
-        <input type="checkbox" name="education" value="Education" checked>Education<br>
-        <input type="checkbox" name="disaster" value="Disaster">Disaster<br>
-        <input type="checkbox" name="health" value="Health">Health<br>
-        <input type="submit" value="Submit">
+        <div alignment="text-center" class="form-group row"> 
+
+                <label class="checkbox-inline"><input type="checkbox" name="food" value="Food">Food</label>
+                <label class="checkbox-inline"><input type="checkbox" name="education" value="Education" checked>Education</label>
+                <label class="checkbox-inline"><input type="checkbox" name="disaster" value="Disaster">Disaster</label> 
+                <label class="checkbox-inline"><input type="checkbox" name="health" value="Health">Health</label> 
+              
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form> 
       
