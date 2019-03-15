@@ -2,7 +2,37 @@
 <html lang="en">
 <head>
  <% include partials/head %>
+ <style>
+    body{
+    background: #eee;
+}
+span{
+    font-size:15px;
+}
+a{
+  text-decoration:none; 
+  color: #0062cc;
+  border-bottom:2px solid #0062cc;
+}
+.box{
+    padding:60px 0px;
+}
+.box-part{
+    background:#FFF;
+    border-radius:0;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+.text{
+    margin:20px 0px;
+}
+.fa{
+     color:#4183D7;
+}
+</style>
+
 </head>
+
 <body>
 <% include partials/menu %>
 
@@ -13,42 +43,105 @@
       <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
 
     <!-- </div>
-    <div class="col-sm-4"> --> 
+    <div class="col-sm-4"> -->
       <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
       <h3>Select Category : </h3>
       <form action="/searchNgo" method="POST">
-        <div alignment="text-center" class="form-group row"> 
-
-                <label class="checkbox-inline"><input type="checkbox" name="food" value="Food">Food</label>
+        <div alignment="text-center" class="form-group row">
+          <div class="container">
+                <label class="checkbox-inline"><input type="checkbox" align="center" name="food" value="Food">Food</label>
                 <label class="checkbox-inline"><input type="checkbox" name="education" value="Education" checked>Education</label>
-                <label class="checkbox-inline"><input type="checkbox" name="disaster" value="Disaster">Disaster</label> 
-                <label class="checkbox-inline"><input type="checkbox" name="health" value="Health">Health</label> 
-              
+                <label class="checkbox-inline"><input type="checkbox" name="disaster" value="Disaster">Disaster</label>
+                <label class="checkbox-inline"><input type="checkbox" name="health" value="Health">Health</label>
+  </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form> 
       
-      <!-- <form action="/register" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    </div>
-    <div class="col-sm-4">
-      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
-   
-
+      <div class="box">
+          <div class="container">
+             <div class="row">
+             
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                     
+                <div class="box-part text-center">
+                              
+                                  <img src="/l1.png"/>
+                              
+                  <div class="title">
+                    <h1>Trishul</h1>
+                  </div>
+                              
+                  <div class="text">
+                    <span>At Trishul Women Empowerment Program (TWEP), our aim is to support economically less-privileged women from rural areas and urban slums as well as revive traditional art and handicrafts by training and encouraging budding artisans through our skill development programs.</span>
+                              </div>
+                              
+                              <div class="text">
+                               
+                                   <h3><a href="https://www.trishul-ngo.org/"><i>Click here to know more!</i></a></h3>
+                               </div>
+                              
+                              
+                  
+                              
+                 </div>
+              </div>	 
+              
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                     
+                <div class="box-part text-center">
+                    
+                        <img src="/l2.png"/>
+                              
+                          
+                  <div class="title">
+                    <h1>BIGGER THAN LIFE</h1>
+                  </div>
+                              
+                  <div class="text">
+                    <span>BIGGER THAN LIFE (A registered NGO) is a project started by a group of enthusiasts, a set of ordinary people who believe they can create extra ordinary possibilities in the lives of the underprivileged kids of Mumbai. </span>
+                  </div>
+                              
+                              <div class="text">
+                                  <h3><a href="http://www.biggerthanlife.in/"><i>Click here to know more!</i></a></h3>
+                               </div>
+                              
+                 </div>
+              </div>	 
+              
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                     
+                <div class="box-part text-center">
+                              
+                                  <img src="/l3.png"/>
+                              
+                              
+                  <div class="title">
+                    <h1>AKSHARA</h1>
+                  </div>
+                              
+                  <div class="text">
+                    <span>Akshara is a project of FREA-India, a registered Trust, No. F1656 (BOM), with an exemption from Income Tax under Section 80G and with a FCRA registration.</span>
+                              </div>
+                              
+                              <div class="text">
+                                  <h3><a href="/magic"><i>See Current Event...</i></a></h3>
+                  </div>
+                              
+              
+                              
+                 </div>
+              </div>	 
+              
+              
+                      
+                      
+          
+          </div>		
+          </div>
+      
+            
+      </div>
 </body>
 <% include partials/script %>
 </html>
