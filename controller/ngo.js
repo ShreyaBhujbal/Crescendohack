@@ -27,8 +27,8 @@ module.exports.addNgo = (req, res) => {
   });
 };
 
-module.exports.viewNgo = (req, res) => {
-  
+module.exports.NGO = (req, res) => {
+      
 }
 
 module.exports.getngo = (req, res) => {
