@@ -65,9 +65,12 @@ router
   })
   .post(eventCtrl.geteventsbycategory)
 
-router.route("/donate").get(function(req, res, next) {
+router
+  .route("/donate")
+  .get(function(req, res, next) {
   res.render("donate");
-});
+})
+
 //mail
 
 var smtpTransport = nodemailer.createTransport({
