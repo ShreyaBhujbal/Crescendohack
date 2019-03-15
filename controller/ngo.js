@@ -15,6 +15,8 @@ module.exports.addNgo = (req, res) => {
     description: req.body.description
   };
 
+
+
   Ngo.create(query, (err, doc) => {
     if (!err) {
       console.log(doc);
@@ -24,6 +26,10 @@ module.exports.addNgo = (req, res) => {
     }
   });
 };
+
+module.exports.viewNgo = (req, res) => {
+  
+}
 
 module.exports.getngo = (req, res) => {
   Ngo.find({}, (err, doc) => {
