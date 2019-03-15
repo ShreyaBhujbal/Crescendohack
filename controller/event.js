@@ -69,7 +69,7 @@ module.exports.getevents = (req, res) => {
 
 module.exports.geteventsbycategory = () => {
   options = req.body.options;
-  options = ["Education", "Health"];
+  options = ["Food", "Education", "Health", "Disaster"];
 
   Event.find({ category: { $in: options } }, (err, doc) => {
     if (err) {
