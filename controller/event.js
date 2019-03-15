@@ -4,7 +4,8 @@ var router = express.Router();
 
 var Event = require("../model/event");
 var Event = mongoose.model("Event");
-
+var Ngo = require("../model/event");
+/*
 module.exports.addEvent = (req, res) => {
   var query = {
     name: req.body.name,
@@ -24,15 +25,7 @@ module.exports.addEvent = (req, res) => {
   });
 };
 
-module.exports.getevents = (req, res) => {
-  Ngo.find({}, (err, doc) => {
-    if (!err) {
-      res.send({ status: "Done", data: doc });
-    } else {
-      res.send({ status: "Error", error: err });
-    }
-  });
-};
+
 
 exports.delete = function(req, res) {
   Event.remove(
@@ -49,3 +42,27 @@ exports.delete = function(req, res) {
     }
   );
 };
+*/
+module.exports.addEvent = (req, res) => {
+  Event.create({
+    name: req.body.name,
+    category: req.body.category,
+    description: req.body.description,
+    target: req.body.target,
+    achieved: req.body.achieved,
+    ngo: req.body.ngoId
+  });
+};
+
+module.exports.getevents = (req, res) => {
+  Event.find({ ngo: req.params.ngoId }, (err, doc) => {
+    if (err) {
+      res.send({ error: err });
+    } else {
+      //Events
+      res.send({ status: "Done", data: doc });
+    }
+  });
+};
+
+//VIEW EVENTS

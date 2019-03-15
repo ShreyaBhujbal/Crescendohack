@@ -6,8 +6,8 @@ var eventCtrl = require("../controller/event");
 var ngoCtrl = require("../controller/ngo");
 
 router
-  .route("/event")
-  .get(eventCtrl.getevents)
+  .route("/:ngoId/event")
+  //.get(eventCtrl.getevents)
   .post(eventCtrl.addEvent);
 
 router
