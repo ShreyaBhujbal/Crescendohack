@@ -38,4 +38,11 @@ var mongoose = require("mongoose");
   })
   .post(ngoCtrl.addNgo)
 
+  router
+  .route('/searchNgo')
+  .get(function(req, res, next) {
+    res.render('searchNgo', {page:'SEARCH NGO', menuId:'searchNgo'});
+  })
+  
+
 module.exports = router;
