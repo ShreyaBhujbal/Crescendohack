@@ -23,7 +23,10 @@ var mongoose = require("mongoose");
   router.get('/about', function(req, res, next) {
     res.render('about', {page:'About Us', menuId:'about'});
   });
-  
+  router.get('/NGO', function(req, res, next) {
+    res.render('NGO', {page:'Add Event', menuId:'NGO'});
+  });
+
   router
   .route('/login')
   .get(function(req, res, next) {
