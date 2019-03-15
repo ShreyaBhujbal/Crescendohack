@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-// var eventCtrl = require("../controller/event");
-// var ngoCtrl = require("../controller/ngo");
+ var eventCtrl = require("../controller/event");
+ var ngoCtrl = require("../controller/ngo");
 //
 // router
 //   .route("/event")
@@ -27,7 +27,19 @@ var mongoose = require("mongoose");
   router.get('/login', function(req, res, next) {
     res.render('login', {page:'LOGIN', menuId:'login'});
   });
-  router.get('/register', function(req, res, next) {
+  
+  /*router
+  .route('/login')
+  .get(function(req, res, next) {
+    res.render('login', {page:'LOGIN', menuId:'login'});
+  })
+  .post()
+*/
+  router
+  .route('/register')
+  .get(function(req, res, next) {
     res.render('register', {page:'REGISTER', menuId:'register'});
-  });
+  })
+  .post(ngoCtrl.addNgo)
+
 module.exports = router;

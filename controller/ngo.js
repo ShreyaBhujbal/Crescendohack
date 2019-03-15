@@ -9,8 +9,9 @@ module.exports.addNgo = (req, res) => {
   var query = {
     name: req.body.name,
     contact: req.body.contact,
+    password: req.body.password,
     mail: req.body.mail,
-    points: req.body.points,
+    points: 0,
     description: req.body.description
   };
 

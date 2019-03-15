@@ -4,6 +4,7 @@ var event = require('./event');
 
 var ngoSchema = new mongoose.Schema({
     name:String,
+    password:String,
     contact:String,
     mail:String,
     points:Number,
